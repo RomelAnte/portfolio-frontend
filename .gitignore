@@ -1,0 +1,39 @@
+# Keep placeholder-only folders out of Git.
+# Git does not track empty directories, and a folder that only contains a
+# README should not be versioned. Documentation for future asset folders lives
+# in static/README.md instead of nested placeholder READMEs.
+static/**/README.md
+!static/README.md
+!static/docs/README.md
+
+# Static files that are usually private or too large for the repo
+static/cv/*.pdf
+static/docs/**/*.pdf
+static/docs/**/*.docx
+static/media/**/*.mp4
+static/media/**/*.mov
+static/media/**/*.webm
+static/media/**/*.gif
+
+# Images (enable if they start getting too heavy)
+# static/images/**/*.jpg
+# static/images/**/*.png
+# static/images/**/*.webp
+
+# Editor
+.DS_Store
+Thumbs.db
+
+# Node/Build
+node_modules/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+desktop.ini
