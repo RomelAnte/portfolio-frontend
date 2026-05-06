@@ -241,7 +241,7 @@ const EDUCATION = [
 ============================================================ */
 
 const VISITOR_COUNTER_CONFIG = {
-  endpoint: "",
+  endpoint: "https://romelante-dev.goatcounter.com/count",
   periodStart: "month",
 };
 
