@@ -8,7 +8,6 @@ static/**/README.md
 
 # Static files that are usually private or too large for the repo
 static/cv/*.pdf
-static/docs/**/*.pdf
 static/docs/**/*.docx
 static/media/**/*.mp4
 static/media/**/*.mov
