@@ -7,44 +7,147 @@
 // Equivalente a: serializers.py → TechSerializer → /api/technologies/
 const TECHNOLOGIES = {
   backend: [
-    { name: "Python", icon: "🐍", level: 95, color: "#3776ab" },
-    { name: "Django", icon: "🎸", level: 90, color: "#092e20" },
-    /*{ name: "DRF", icon: "🔌", level: 85, color: "#a30000" },*/
-    { name: "PostgreSQL", icon: "🐘", level: 82, color: "#336791" },
-    /*{ name: "Redis", icon: "🔴", level: 75, color: "#dc382d" },
-    { name: "Celery", icon: "🌿", level: 70, color: "#37814a" },*/
+    {
+      name: "Python",
+      icon: '<i class="fab fa-python"></i>',
+      level: 75,
+      color: "#3776ab",
+    },
+    {
+      name: "Django",
+      icon: '<i class="fas fa-server"></i>',
+      level: 75,
+      color: "#092e20",
+    },
+    {
+      name: "PHP",
+      icon: '<i class="fab fa-php"></i>',
+      level: 70,
+      color: "#777bb4",
+    },
+    {
+      name: "CodeIgniter",
+      icon: '<i class="fas fa-fire"></i>',
+      level: 78,
+      color: "#ef4223",
+    },
+    {
+      name: "ASP.NET",
+      icon: '<i class="fab fa-microsoft"></i>',
+      level: 65,
+      color: "#0078d7",
+    },
+    {
+      name: "Node.js",
+      icon: '<i class="fab fa-node-js"></i>',
+      level: 45,
+      color: "#68a063",
+    },
   ],
   frontend: [
-    /*{ name: "Astro", icon: "🚀", level: 88, color: "#ff5d01" },
-    { name: "JavaScript", icon: "⚡", level: 87, color: "#f7df1e" },
-    { name: "TypeScript", icon: "🔷", level: 80, color: "#3178c6" },
-    { name: "React", icon: "⚛️", level: 82, color: "#61dafb" },*/
-    { name: "CSS / SCSS", icon: "🎨", level: 88, color: "#cc6699" },
-    //{ name: "Tailwind", icon: "🌬️", level: 85, color: "#38bdf8" },
+    {
+      name: "React",
+      icon: '<i class="fab fa-react"></i>',
+      level: 40,
+      color: "#61dafb",
+    },
+    {
+      name: "JavaScript",
+      icon: '<i class="fab fa-js-square"></i>',
+      level: 65,
+      color: "#f0db4f",
+    },
+    {
+      name: "HTML5",
+      icon: '<i class="fab fa-html5"></i>',
+      level: 80,
+      color: "#e34c26",
+    },
+    {
+      name: "CSS3",
+      icon: '<i class="fab fa-css3-alt"></i>',
+      level: 80,
+      color: "#cc6699",
+    },
+    {
+      name: "Bootstrap",
+      icon: '<i class="fab fa-bootstrap"></i>',
+      level: 78,
+      color: "#563d7c",
+    },
   ],
   devops: [
-    //{ name: "Docker", icon: "🐳", level: 78, color: "#2496ed" },
-    { name: "Git", icon: "🌿", level: 92, color: "#f05032" },
-    /*{ name: "Linux", icon: "🐧", level: 75, color: "#fcc624" },
-    { name: "Nginx", icon: "🟩", level: 70, color: "#009900" },*/
+    {
+      name: "Git",
+      icon: '<i class="fab fa-git-alt"></i>',
+      level: 92,
+      color: "#f05032",
+    },
+    {
+      name: "GitHub",
+      icon: '<i class="fab fa-github"></i>',
+      level: 90,
+      color: "#333",
+    },
+    {
+      name: "GitLab",
+      icon: '<i class="fab fa-gitlab"></i>',
+      level: 85,
+      color: "#fc6d26",
+    },
+    {
+      name: "VS Code",
+      icon: '<i class="fas fa-code"></i>',
+      level: 80,
+      color: "#007acc",
+    },
+    {
+      name: "VS 2019",
+      icon: '<i class="fas fa-code"></i>',
+      level: 70,
+      color: "#5c2d91",
+    },
+    {
+      name: "Postman",
+      icon: '<i class="fas fa-envelope"></i>',
+      level: 70,
+      color: "#ff6c37",
+    },
+    {
+      name: "PostgreSQL",
+      icon: '<i class="fas fa-database"></i>',
+      level: 60,
+      color: "#336791",
+    },
+    {
+      name: "SQL Server",
+      icon: '<i class="fas fa-server"></i>',
+      level: 65,
+      color: "#cc2927",
+    },
+    {
+      name: "MySQL",
+      icon: '<i class="fas fa-database"></i>',
+      level: 60,
+      color: "#4479a1",
+    },
   ],
 };
 
 // Equivalente a: ProjectSerializer → /api/projects/?featured=true
 const FEATURED_PROJECT = {
   id: 1,
-  badge: "✦ Proyecto destacado",
+  badge: '<i class="fas fa-star"></i> Proyecto destacado',
   title: "Modulo de Reserva de Laboratorios",
-  description:
-    `Sistema web desarrollado para la universidad que permite 
+  description: `Sistema web desarrollado para la universidad que permite 
     al personal gestionar y reservar laboratorios. Arquitectura 
     robusta con ASP.NET Web Forms y SQL Server, pensada para 
     entornos institucionales.`,
   stack: ["ASP.NET", "SQL Server", "Bootstrap"],
-  emoji: "🏛️",
+  emoji: '<i class="fas fa-building"></i>',
   links: {
     demo: "",
-    github: "https://github.com/Xavier747/ReservaLaboratorios.git"
+    github: "https://github.com/Xavier747/ReservaLaboratorios.git",
   },
 };
 
@@ -52,10 +155,9 @@ const FEATURED_PROJECT = {
 const PROJECTS = [
   {
     id: 2,
-    emoji: "📊",
+    emoji: '<i class="fas fa-chart-bar"></i>',
     title: "Observatorio de Aseguramiento de la Calidad",
-    description:
-      `Actualización del sistema web del departamento de calidad 
+    description: `Actualización del sistema web del departamento de calidad 
       universitaria. En producción en la red institucional.`,
     stack: ["PHP", "MySQL", "Bootstrap"],
     demo: "https://observatorio.utc.edu.ec/",
@@ -63,10 +165,9 @@ const PROJECTS = [
   },
   {
     id: 3,
-    emoji: "🏛️",
+    emoji: '<i class="fas fa-building"></i>',
     title: "Sitio Web Parroquia San Buenaventura",
-    description:
-      `Sitio web institucional para la parroquia urbana de 
+    description: `Sitio web institucional para la parroquia urbana de 
       Latacunga. Diseño limpio orientado a la comunidad local.`,
     stack: ["WIX"],
     demo: "https://sanbuenaventurapar.wixsite.com/parroquia-urbana-san",
@@ -127,7 +228,7 @@ const EDUCATION = [
     company: "Ministerio del Trabajo",
     desc: "",
     tags: ["Python", "Multiplataforma"],
-  }
+  },
 ];
 
 /* ============================================================
@@ -321,53 +422,53 @@ window.addEventListener("load", () => {
 ============================================================ */
 function handleFormSubmit(event) {
   event.preventDefault();
-  
+
   const form = event.target;
-  const submitBtn = form.querySelector('.form-submit');
+  const submitBtn = form.querySelector(".form-submit");
   const originalText = submitBtn.textContent;
-  
+
   // Desactivar botón
   submitBtn.textContent = "Enviando...";
   submitBtn.style.opacity = "0.7";
   submitBtn.style.pointerEvents = "none";
-  
+
   // Enviar formulario
   fetch(form.action, {
-    method: 'POST',
+    method: "POST",
     body: new FormData(form),
     headers: {
-      'Accept': 'application/json'
-    }
+      Accept: "application/json",
+    },
   })
-  .then(response => {
-    if (response.ok) {
-      submitBtn.textContent = "✓ ¡Mensaje enviado!";
-      submitBtn.style.background = "#22c55e";
-      form.reset();
-      
-      // Reset después de 3s
+    .then((response) => {
+      if (response.ok) {
+        submitBtn.textContent = "✓ ¡Mensaje enviado!";
+        submitBtn.style.background = "#22c55e";
+        form.reset();
+
+        // Reset después de 3s
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.style.background = "";
+          submitBtn.style.opacity = "1";
+          submitBtn.style.pointerEvents = "";
+        }, 3000);
+      } else {
+        throw new Error("Error en el envío");
+      }
+    })
+    .catch((error) => {
+      submitBtn.textContent = "✗ Error al enviar";
+      submitBtn.style.background = "#ef4444";
+      console.error("Error:", error);
+
       setTimeout(() => {
         submitBtn.textContent = originalText;
         submitBtn.style.background = "";
         submitBtn.style.opacity = "1";
         submitBtn.style.pointerEvents = "";
       }, 3000);
-    } else {
-      throw new Error('Error en el envío');
-    }
-  })
-  .catch(error => {
-    submitBtn.textContent = "✗ Error al enviar";
-    submitBtn.style.background = "#ef4444";
-    console.error('Error:', error);
-    
-    setTimeout(() => {
-      submitBtn.textContent = originalText;
-      submitBtn.style.background = "";
-      submitBtn.style.opacity = "1";
-      submitBtn.style.pointerEvents = "";
-    }, 3000);
-  });
+    });
 }
 
 /* ============================================================
