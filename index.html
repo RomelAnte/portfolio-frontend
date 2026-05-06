@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Moreno — Fullstack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ====================================================
+       LOADER
+  ==================================================== -->
+  <div id="loader">
+    <div class="loader-logo">&lt;RA/&gt;</div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- ====================================================
+       NAVEGACIÓN
+  ==================================================== -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">Romel<span>.</span>dev</a>
+    <ul class="nav-links">
+      <li><a href="#about" data-num="01.">Sobre mí</a></li>
+      <li><a href="#tech" data-num="02.">Stack</a></li>
+      <li><a href="#projects" data-num="03.">Proyectos</a></li>
+      <li><a href="#experience" data-num="04.">Experiencia</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Contactar</a>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ====================================================
+       HERO
+  ==================================================== -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-content">
+
+      <div class="hero-available">
+        <span class="dot"></span>
+        Disponible para proyectos freelance
+      </div>
+
+      <h1 class="hero-name">
+        Romel<br/>
+        Ante<span class="accent">.</span>
+      </h1>
+
+      <p class="hero-tagline">
+        Backend Developer &mdash;
+        <span id="typing-text"></span><span class="cursor-blink"></span>
+      </p>
+
+      <p class="hero-description">
+        <!--
+          INTEGRACIÓN DJANGO: Este párrafo puede venir del modelo
+          Developer.bio en una template tag como {{ developer.bio }}
+        -->
+        Desarrollo sistemas web que funcionan de verdad — no demos, 
+        no prototipos. Me especializo en backend con Django y .NET, 
+        construyendo arquitecturas limpias que escalan. Y cuando 
+        el proyecto lo exige, también ejecuto el frontend.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Ver proyectos
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          Hablemos
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-deco">
+      <div class="hero-deco-inner">💻</div>
+    </div>
+
+    <div class="hero-scroll">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+      scroll
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SOBRE MÍ
+  ==================================================== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-image-wrap reveal">
+          <div class="about-image-placeholder">
+            👨‍💻
+          </div>
+          <div class="about-badge">
+            <span>2</span>
+            años de<br>experiencia
+          </div>
+        </div>
+
+        <div class="about-text reveal">
+          <div class="section-label">Sobre mí</div>
+          <h2 class="section-title">¿Tienes una idea y necesitas<br>que alguien la construya?</h2>
+          <!--
+            INTEGRACIÓN DJANGO:
+            {% for paragraph in developer.about_paragraphs.all %}
+              <p>{{ paragraph.text }}</p>
+            {% endfor %}
+          -->
+          
+          <p>
+            Soy <strong>desarrollador backend</strong> con 2 años construyendo sistemas reales 
+            en entornos universitarios y clientes directos. Backend 
+            es mi territorio — Django, CodeIgniter, .NET — y ejecuto 
+            el frontend cuando el proyecto lo exige.
+          </p>
+          <p>
+            Me formé resolviendo problemas concretos: un sistema para 
+            el Observatorio de Aseguramiento de la Calidad, mi proyecto 
+            de tesis, y páginas web que ya están en producción.
+          </p>
+          <p>
+            Si buscas a alguien que entregue, aquí estoy.
+          </p>
+
+          <div class="about-facts">
+            <!--
+              INTEGRACIÓN DJANGO:
+              {% for stat in developer.stats.all %}
+                <div class="about-fact">
+                  <div class="about-fact-value">{{ stat.value }}</div>
+                  <div class="about-fact-label">{{ stat.label }}</div>
+                </div>
+              {% endfor %}
+            -->
+            <div class="about-fact">
+              <div class="about-fact-value">3</div>
+              <div class="about-fact-label">Proyectos completados</div>
+            </div>
+            <div class="about-fact">
+              <div class="about-fact-value">3</div>
+              <div class="about-fact-label">Clientes satisfechos</div>
+            </div>
+            <div class="about-fact">
+              <div class="about-fact-value">2</div>
+              <div class="about-fact-label">Años de experiencia</div>
+            </div>
+            <div class="about-fact">
+              <div class="about-fact-value">∞</div>
+              <div class="about-fact-label">Commits de amor</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       TECNOLOGÍAS
+  ==================================================== -->
+  <section id="tech">
+    <div class="container">
+      <div class="tech-intro reveal">
+        <div>
+          <div class="section-label">Stack tecnológico</div>
+          <h2 class="section-title">Herramientas<br>que domino.</h2>
+        </div>
+        <p class="section-subtitle">
+          Un conjunto de tecnologías cuidadosamente seleccionadas para
+          resolver desde startups hasta sistemas empresariales.
+        </p>
+      </div>
+
+      <!--
+        INTEGRACIÓN DJANGO:
+        Las categorías y tecnologías pueden venir de:
+        {% regroup technologies by category as tech_by_cat %}
+        {% for category in tech_by_cat %}...{% endfor %}
+        
+        Los datos actuales simulan la respuesta del backend.
+      -->
+
+      <div class="tech-category reveal">
+        <div class="tech-category-label">// Backend</div>
+        <div class="tech-grid" id="tech-backend"></div>
+      </div>
+
+      <div class="tech-category reveal">
+        <div class="tech-category-label">// Frontend</div>
+        <div class="tech-grid" id="tech-frontend"></div>
+      </div>
+
+      <div class="tech-category reveal">
+        <div class="tech-category-label">// DevOps & Herramientas</div>
+        <div class="tech-grid" id="tech-devops"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       PROYECTOS
+  ==================================================== -->
+  <section id="projects">
+    <div class="container">
+      <div class="projects-header reveal">
+        <div>
+          <div class="section-label">Trabajo seleccionado</div>
+          <h2 class="section-title">Proyectos que<br>hablan por sí solos.</h2>
+        </div>
+        <a href="#" class="btn-secondary" style="white-space:nowrap">
+          Ver todos →
+        </a>
+      </div>
+
+      <!-- Proyecto destacado -->
+      <div class="project-featured reveal" id="featured-project"></div>
+
+      <!-- Grid de proyectos -->
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       EXPERIENCIA & FORMACIÓN
+  ==================================================== -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-label reveal">Trayectoria</div>
+      <h2 class="section-title reveal">Experiencia &<br>formación.</h2>
+      <br><br>
+
+      <!--
+        INTEGRACIÓN DJANGO:
+        {% for item in experience_items %}
+          <div class="timeline-item">
+            <div class="timeline-date">{{ item.date_range }}</div>
+            ...
+          </div>
+        {% endfor %}
+      -->
+
+      <div class="exp-grid">
+        <div>
+          <div style="font-family:var(--font-mono);font-size:.68rem;color:var(--accent-1);letter-spacing:.15em;text-transform:uppercase;margin-bottom:32px;">Experiencia laboral</div>
+          <div class="timeline" id="timeline-exp"></div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:.68rem;color:var(--accent-1);letter-spacing:.15em;text-transform:uppercase;margin-bottom:32px;">Formación académica</div>
+          <div class="timeline" id="timeline-edu"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       CONTACTO
+  ==================================================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <div class="section-label">Contacto</div>
+          <h2 class="contact-info">
+            <span style="font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.15;">
+              ¿Tienes un<br><em style="font-style:normal;color:var(--accent-1)">proyecto</em> en<br>mente?
+            </span>
+          </h2>
+          <p>
+            Estoy disponible para proyectos freelance, colaboraciones y
+            oportunidades de empleo. Cuéntame tu idea y construyamos juntos.
+          </p>
+
+          <div class="contact-channels">
+            <a href="mailto:romel20092002ante@gmail.com" class="contact-channel" target="_blank">
+              <div class="channel-icon">✉️</div>
+              romel20092002ante@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/romel-ante" target="_blank" class="contact-channel">
+              <div class="channel-icon">in</div>
+              linkedin.com/in/romel-ante
+            </a>
+            <a href="https://github.com/RomelAnte" target="_blank" class="contact-channel">
+              <div class="channel-icon" style="font-family:var(--font-mono);font-size:.75rem;">GH</div>
+              github.com/RomelAnte
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <form id="contactForm" action="https://formspree.io/f/xyzabcde" method="POST" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Nombre</label>
+              <input type="text" name="nombre" class="form-input" placeholder="Tu nombre completo" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-input" placeholder="tu@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Asunto</label>
+              <input type="text" name="asunto" class="form-input" placeholder="¿En qué puedo ayudarte?" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mensaje</label>
+              <textarea name="mensaje" class="form-textarea" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="submitBtn">
+              Enviar mensaje
+            </button>
+            <p class="form-note">
+              ⚡ Respondo en menos de 24 horas
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       FOOTER
+  ==================================================== -->
+  <footer>
+    <div class="footer-copy">
+      © <span id="current-year"></span> <span>Romel Ante</span>. Construido con 🤍 en Astro + Django.
+    </div>
+    <div class="footer-built">
+      <!--
+        DJANGO: {{ developer.location }} · {{ site.year }}
+      -->
+      Diseñado y desarrollado from scratch
+    </div>
+    <div class="footer-socials">
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
