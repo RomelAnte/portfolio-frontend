@@ -232,20 +232,6 @@ const EDUCATION = [
 ];
 
 /* ============================================================
-    VISITOR COUNTER
-    Usa GoatCounter para un contador discreto en el footer.
-    1. Crea tu sitio en https://www.goatcounter.com/
-    2. Activa "Allow adding visitor counts on your website"
-    3. Reemplaza endpoint con tu URL real, por ejemplo:
-       https://TU-CODIGO.goatcounter.com/count
-============================================================ */
-
-const VISITOR_COUNTER_CONFIG = {
-  endpoint: "https://romelante-dev.goatcounter.com/count",
-  periodStart: "month",
-};
-
-/* ============================================================
     RENDER FUNCTIONS
 ============================================================ */
 
@@ -360,85 +346,6 @@ function renderTimeline(items, containerId) {
 `,
     )
     .join("");
-}
-
-function normalizeGoatCounterBase(endpoint) {
-  return endpoint.replace(/\/count\/?$/, "");
-}
-
-function setCounterValue(id, value) {
-  const target = document.getElementById(id);
-  if (target) {
-    target.textContent = value;
-  }
-}
-
-function loadGoatCounter(endpoint) {
-  return new Promise((resolve, reject) => {
-    const existing = document.querySelector('script[data-goatcounter]');
-    if (existing) {
-      resolve();
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://gc.zgo.at/count.js";
-    script.dataset.goatcounter = endpoint;
-    script.dataset.goatcounterSettings = JSON.stringify({
-      allow_local: true,
-    });
-    script.onload = resolve;
-    script.onerror = reject;
-    document.body.appendChild(script);
-  });
-}
-
-async function fetchVisitorCount(baseUrl, start) {
-  const query = start ? `?start=${encodeURIComponent(start)}` : "";
-  const response = await fetch(`${baseUrl}/counter/TOTAL.json${query}`);
-
-  if (!response.ok) {
-    throw new Error(`No se pudo leer contador: ${response.status}`);
-  }
-
-  const data = await response.json();
-  return data.count || "0";
-}
-
-async function updateVisitorCounter(baseUrl) {
-  const [monthCount, totalCount] = await Promise.all([
-    fetchVisitorCount(baseUrl, VISITOR_COUNTER_CONFIG.periodStart),
-    fetchVisitorCount(baseUrl, ""),
-  ]);
-
-  setCounterValue("visitor-count-month", monthCount);
-  setCounterValue("visitor-count-total", totalCount);
-}
-
-async function initVisitorCounter() {
-  const counter = document.getElementById("visitor-counter");
-  const endpoint = VISITOR_COUNTER_CONFIG.endpoint.trim();
-
-  if (!counter || !endpoint) return;
-
-  const baseUrl = normalizeGoatCounterBase(endpoint);
-
-  try {
-    await loadGoatCounter(endpoint);
-    counter.hidden = false;
-
-    await updateVisitorCounter(baseUrl);
-
-    // Refresca una vez mas por si GoatCounter tarda unos segundos en procesar
-    // la visita actual.
-    setTimeout(() => {
-      updateVisitorCounter(baseUrl).catch(() => {});
-    }, 12000);
-  } catch (error) {
-    console.warn("Visitor counter no disponible:", error);
-    counter.hidden = true;
-  }
 }
 
 /* ============================================================
@@ -575,7 +482,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects(PROJECTS);
   renderTimeline(EXPERIENCE, "timeline-exp");
   renderTimeline(EDUCATION, "timeline-edu");
-  initVisitorCounter();
 
   // Iniciar observer después de render
   setTimeout(initReveal, 100);
